@@ -1,6 +1,6 @@
 # Month 03 - Routing & IP Connectivity (Core Routing Protocols and Services)
 
-**Focus:** Month 3 dives into the IP Connectivity domain (25%) - configuring and understanding routing. We will cover static routing and the OSPF routing protocol in detail, as well as first-hop redundancy protocols conceptually. We'll integrate IP Services like DHCP, NAT, and NTP as we set up networks that need those services. By the end of Month 3, you will have built multi-router topologies, configured  19 dynamic routing with OSPF, and implemented common IP services in labs. Domains covered: Primarily IP Connectivity (CCNA 3.0) and parts of IP Services (CCNA 4.0) like DHCP, NTP as needed in labs.
+**Focus:** Routing and IP services: static routes, OSPF, DHCP, NAT, and supporting services.
 
 | Week | Theme | Folder |
 | --- | --- | --- |

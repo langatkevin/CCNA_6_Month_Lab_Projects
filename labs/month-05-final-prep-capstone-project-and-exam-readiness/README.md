@@ -1,6 +1,6 @@
 # Month 05 - Final Prep, Capstone Project, and Exam Readiness
 
-**Focus:** Month 5 is about consolidation and application . We will integrate everything in a realistic capstone project , do last-mile prep with mock exams and flashcards, and finally take (and pass!) the CCNA exam likely in Week 4 or end of this month. Post-exam, we'll transition to job preparation tasks. (If you plan to take the exam in Month 6 instead, you can adjust accordingly, but this plan assumes by end of Month 5 you attempt the exam).
+**Focus:** Capstone execution plus final CCNA preparation.
 
 | Week | Theme | Folder |
 | --- | --- | --- |

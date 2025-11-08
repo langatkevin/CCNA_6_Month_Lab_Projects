@@ -1,39 +1,38 @@
 # CCNA 6-Month Lab Projects
 
-A Git-ready home for every Packet Tracer build, config snippet, and write-up you create while following the "6-Month CCNA 200-301 Study Plan for Aspiring Network Engineers". The repo mirrors the reference document month-by-month so you can focus on learning instead of reorganizing notes.
+This repo mirrors the "6-Month CCNA 200-301 Study Plan" so every lab, note, and Packet Tracer file sits in one place.
 
-## What's Inside
-- docs/reference/ holds the original PDF, a text extract, and the parsed JSON outline used to build everything else.
-- docs/roadmaps/monthly-roadmap.md gives a quick view of each month and links directly to the matching lab folders.
-- labs/ contains a subfolder for every month and week (Weeks 01-19). Each week ships with a README that lists the study objectives, primary labs, milestones, and an embedded lab log table.
-- 	emplates/lab-log.md is a reusable template for detailed lab reports—drop a copy beside configs or Packet Tracer files when you need more space than the weekly README provides.
-- scripts/ includes small helpers that rebuild the structure if the study plan changes (extract_plan.py, uild_lab_structure.py, uild_roadmap.py).
+## Layout
+- docs/reference/ keeps the PDF, a plain-text extract, plan_structure.json, and the simplified week_summaries.json.
+- docs/roadmaps/monthly-roadmap.md lists each month with quick links to the week folders under labs/.
+- labs/ contains Week 01 through Week 19. Every week has a lightweight README plus an empty lab log table ready for evidence.
+- 	emplates/lab-log.md is a drop-in template for longer reports or change logs.
+- scripts/ hosts helper scripts that rebuild the structure whenever the source plan changes.
 
-## Daily Workflow
-1. **Read the plan**: start from docs/roadmaps/monthly-roadmap.md, open the week you are on (for example labs/month-03.../week-08...).
-2. **Add evidence**: open the week's README and fill in the lab log table or copy 	emplates/lab-log.md into the week folder for longer notes. Store Packet Tracer files, configs, and captures beside the README.
-3. **Reflect + push**: once a week (or after a big lab) run git status, add your changes, and push to GitHub.
+## Suggested Daily Loop
+1. Open docs/roadmaps/monthly-roadmap.md and jump to the current week folder.
+2. Read the week README, run the listed labs, and record results in the log table (or copy 	emplates/lab-log.md for deeper notes).
+3. Keep Packet Tracer files, configs, captures, and screenshots beside the week README for easy commits.
 
-`
-git init
+Push progress often:
+
+`powershell
+git status
 git add .
-git commit -m "Add week 01 lab notes"
-git remote add origin https://github.com/<user>/ccna-labs.git
-git push -u origin main
+git commit -m "Log Week 01 labs"
+git push
 `
 
-## Regenerating From The Source Plan
-If Cisco updates the reference plan, drop the new PDF in docs/reference/, re-run scripts/extract_plan.py, then rebuild the folders and roadmap:
+## Rebuilding From The Study Plan
+Drop an updated PDF into docs/reference/, then run:
 
-`
+`powershell
 python scripts/extract_plan.py
 python scripts/build_lab_structure.py
 python scripts/build_roadmap.py
 `
 
-## Suggested Enhancements
-- Track configs separately under each week (for example, configs/ or captures/).
-- Add CI or a pre-commit hook that lints configs or verifies Packet Tracer files are zipped before pushing.
-- Use GitHub Projects or Issues to log blockers encountered during labs.
-
-Commit early and often so your GitHub profile shows the full CCNA journey.
+## Nice-to-Haves
+- Create per-week configs/, captures/, or evidence/ folders if labs grow large.
+- Add linting or formatting checks for configs and scripts.
+- Track blockers or ideas in GitHub Issues, Discussions, or Projects to keep momentum high.

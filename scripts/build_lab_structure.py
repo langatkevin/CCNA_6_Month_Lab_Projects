@@ -6,6 +6,15 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 REFERENCE_DIR = BASE_DIR / 'docs' / 'reference'
 LABS_DIR = BASE_DIR / 'labs'
+SUMMARY_PATH = REFERENCE_DIR / 'week_summaries.json'
+MONTH_FOCUS_OVERRIDES = {
+    1: 'Lay the foundation: networking terms, OSI/TCP-IP models, lab tooling, and steady study habits.',
+    2: 'Switching focus: VLANs, trunks, spanning tree, and wireless access basics.',
+    3: 'Routing and IP services: static routes, OSPF, DHCP, NAT, and supporting services.',
+    4: 'Security and review: harden devices, explore automation, and run mock exams.',
+    5: 'Capstone execution plus final CCNA preparation.',
+    6: 'Career preparation: resumes, interviews, job search, and ongoing learning.'
+}
 
 REPLACEMENTS = {
     '’': "'",
@@ -126,21 +135,37 @@ def parse_week_sections(content: str):
 
 def markdown_list(items):
     if not items:
-        return '- Add your own items from the study plan.'
-    return '\n'.join(f"- {item}" for item in items)
+        return '- Add lab-specific items from the study plan.'
+    return '\n'.join(f"- {to_ascii(item)}" for item in items)
 
 
 def ensure_dir(path: Path):
     path.mkdir(parents=True, exist_ok=True)
 
 
+def load_week_summaries():
+    if not SUMMARY_PATH.exists():
+        return {}
+    data = json.loads(SUMMARY_PATH.read_text())
+    mapping = {}
+    for entry in data.get('weeks', []):
+        mapping[entry['number']] = {
+            'Objectives': entry.get('objectives', []),
+            'Labs': entry.get('labs', []),
+            'Milestones': entry.get('milestones', [])
+        }
+    return mapping
+
+
 def main():
     plan = json.loads((REFERENCE_DIR / 'plan_structure.json').read_text())
+    summaries = load_week_summaries()
     for month in plan:
         month_slug = f"month-{month['number']:02d}-{slugify(month['title'])}"
         month_dir = LABS_DIR / month_slug
         ensure_dir(month_dir)
-        focus_text = to_ascii(month.get('focus', '')).strip()
+        focus_raw = MONTH_FOCUS_OVERRIDES.get(month['number'], month.get('focus', ''))
+        focus_text = to_ascii(focus_raw).strip()
         month_lines = [f"# Month {month['number']:02d} - {to_ascii(month['title'])}"]
         if focus_text:
             month_lines.append(f"\n**Focus:** {focus_text}\n")
@@ -150,7 +175,9 @@ def main():
             week_slug = f"week-{week['number']:02d}-{slugify(week['title'])}"
             week_dir = month_dir / week_slug
             ensure_dir(week_dir)
-            sections = parse_week_sections(week['content'])
+            sections = summaries.get(week['number'])
+            if not sections:
+                sections = parse_week_sections(week['content'])
             week_readme = [f"# Week {week['number']:02d} - {to_ascii(week['title'])}"]
             week_readme.append('')
             week_readme.append('> Adapted from the "6-Month CCNA 200-301 Study Plan" reference.')

@@ -3,27 +3,20 @@
 > Adapted from the "6-Month CCNA 200-301 Study Plan" reference.
 
 ## Objectives
-- Learn how routers forward packets by default: refresh longest-prefix-match routing logic and administrative distance basics.
-- Configure static routes on Cisco routers: host routes, network routes, default routes (quad-zero)
-- . Understand when to use static routing (small or stub networks) and its limitations.
-- Practice troubleshooting routing issues: e.g., missing static route or wrong next-hop causing no connectivity.
-- Introduce First-Hop Redundancy Protocols (FHRP) concepts: HSRP/VRRP/GLBP (the exam expects you to know what they are and purpose , but not to configure them). Understand that they provide a virtual gateway IP so that if one router fails, another takes over - ensuring default gateway availability.
-- Implement a simple HSRP or VRRP scenario in Packet Tracer if possible (PT supports basic HSRP configuration on routers). This is to visualize how two routers can share an IP for redundancy.
-- Revisit ARP and how it works in routing: ensure understanding that when a router forwards to next- hop, it uses ARP to get the MAC. This ties back to fundamentals and helps troubleshoot layer 3 vs layer 2 issues.
+- Configure IPv4 and IPv6 static routes, including floating routes.
+- Implement HSRP or VRRP for gateway redundancy.
+- Practice troubleshooting for asymmetric routing and missing routes.
+- Log verification commands such as show ip route and show standby.
 
 ## Hands-On Labs & Mini Projects
-- Lab Practice - Some websites (like Free CCNA Workbook) have static routing labs. Use those descriptions to set up scenarios. Packet Tracer Challenge - Use PT's Activity Wizard or find some PT activities shared online for static routing challenges (like a troubleshooting scenario where you must add missing routes). Hands-On Labs/Projects:
-- Lab 7.1: Static Routing Basic - Create a topology of 3 routers in a chain (R1-R2-R3) with three networks: network A between R1 and R2, network B between R2 and R3, and a loopback or LAN off R1 and R3 each to simulate end networks. Without dynamic routing, configure static routes so that: R1 knows how to reach R3's LAN, R3 knows how to reach R1's LAN, and both use R2 as next hop. Also R2 needs routes to both LANs (or use default routes strategically). Expected Outcome: End devices on R1's LAN can ping end devices on R3's LAN. Test by pinging across and possibly traceroute to see the path. Document the routing table of each router ( show ip route output) to confirm the routes.
-- Lab 7.2: Static Route Failover (Floating Static) - Modify Lab 7.1 by adding a redundant link: e.g., a direct link between R1 and R3 (so we have two paths between R1 and R3: one via R2, one direct). On R1, set a primary static route to R3's LAN via R2. Then set a floating static (higher AD) via the direct link. Do the inverse on R3. Test: when everything up, traffic goes via R2 (check traceroute). Shut down the R1-R2 interface to simulate failure; traffic should reroute via direct R1-R3 link thanks to the floating static. Expected Outcome: You see failover in action with static routes (this parallels what dynamic routing or FHRP would do automatically). This solidifies understanding of AD (administrative distance) and backup routes.
-- Lab 7.3: HSRP Configuration (optional if time and interest) - If Packet Tracer supports HSRP on routers (it does on multilayer switches for sure, routers maybe), set up two routers both connected to a LAN (e.g., PC, Switch, and two routers all in VLAN 10). Configure HSRP on the routers for that VLAN10 network: give them a virtual IP as default gateway for the PC. Make one router active with higher priority. Observe that the PC's default gateway is the virtual IP, but it's being served by Router1. Then shut Router1's interface and see Router2 take over (PC should still ping out, perhaps to a simulated internet cloud or another network). Expected Outcome: The PC doesn't lose connectivity when the primary gateway router goes down - HSRP provides redundancy. Use show standby on routers to see HSRP status. 21
-- Lab 7.4: Troubleshoot Static Routes - Intentionally break something in a static route setup: e.g., omit a route on one of the routers and see how ping fails one direction. Practice diagnosing: use ping, then traceroute , then check routing tables, then fix route. Document this process as if writing a troubleshooting ticket resolution. (Design Exercise) Default Gateway Redundancy Plan: Write a small memo for a hypothetical network: two edge routers serving a network. Propose which FHRP to use (say VRRP if multi- vendor or HSRP if Cisco-only) and why. Outline the config steps at high level. This isn't execution but demonstrates you understand the problem FHRPs solve and how you'd apply it.
+- Lab 7.1 - Build a dual-router edge with static routes and backups.
+- Lab 7.2 - Configure HSRP on two switches and test failover.
+- Troubleshooting drill - Break a static route and document the fix.
 
 ## Milestones & Checkpoints
-- Milestone 1: Configure static routes on a multi-router topology and demonstrate end-to-end connectivity. Provide a screenshot of show ip route from each router with explanations of each route entry (e.g., "S 10.1.1.0/24 [1/0] via 10.2.0.2" means a static route to network 10.1.1.0 with AD 1 via next-hop 10.2.0.2). Explaining the routing table cements your understanding.
-- Milestone 2: Achieve a successful static route failover test (if attempted): demonstrate via traceroute or ping that traffic reroutes when primary path is down. This shows grasp of AD and backup routes.
-- Milestone 3: Be able to describe how HSRP/VRRP works without notes. For example: "HSRP: two or more routers form a group with a virtual IP; one is active (forwarding) with virtual MAC, another is standby; if active fails, standby takes over virtual IP/MAC so hosts don't notice." If you can say that, you're set for CCNA-level FHRP knowledge.
-- Milestone 4: Static routing quiz score ~100% (it's a small topic, aim to perfect it), FHRP quiz ~80%. If any confusion remains (like difference between GLBP vs HSRP), clarify now.
-- Checkpoint: You've laid the groundwork for dynamic routing. Static routes are fine but imagine doing that for 50 routers - not scalable. You should be eagerly anticipating how a protocol like OSPF will automate route distribution - that's next week. Also ensure you haven't lost touch with switching: maybe in labs you combined VLANs with routing (router on stick is static route case). If not, maybe quickly review your inter-VLAN lab to see static routes in action (the router had connected routes for 22 VLANs; static routes might have been used on switches if L3 switch, etc.). Everything's building up. On to OSPF!
+- Routing table snapshots stored for normal and failure states.
+- HSRP state-change timeline recorded with ping evidence.
+- Troubleshooting checklist refined for future routing labs.
 
 ## Lab Log
 | Date | Lab / Config | Key Takeaways | Evidence (files/screens) |

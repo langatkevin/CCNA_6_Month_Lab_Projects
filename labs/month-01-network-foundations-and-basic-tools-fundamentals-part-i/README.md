@@ -1,6 +1,6 @@
 # Month 01 - Network Foundations and Basic Tools (Fundamentals Part I)
 
-**Focus:** Build a strong foundation in basic networking concepts and terminology. By the end of Month 1, you should understand how networks operate at a fundamental level (OSI and TCP/IP models, what routers and switches do, basics of IP addressing) and have your study/lab environment set up. We'll also start doing simple labs in Packet Tracer to cement concepts. Domains covered: Primarily Network Fundamentals (CCNA domain 1.0), plus basic hands-on skills.
+**Focus:** Lay the foundation: networking terms, OSI/TCP-IP models, lab tooling, and steady study habits.
 
 | Week | Theme | Folder |
 | --- | --- | --- |

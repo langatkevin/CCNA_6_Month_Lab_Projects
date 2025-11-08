@@ -1,6 +1,6 @@
 # Month 06 - Post-CCNA Career Preparation
 
-**Focus:** With CCNA in hand, time to land that job! Month 6 (which might start immediately after passing or overlap if you took exam in Month 5) is devoted to job search prep: polishing resume, practicing interview questions (technical and HR), labbing any practical skills for interviews, and continuing to learn (perhaps start looking at CCNA specialization or CCNP topics lightly, to discuss future plans in interviews). We'll break it into 4 weeks with tasks, but you can adjust based on your situation (you might already be in a job and just need to leverage CCNA for promotion, etc.). We assume you're seeking a network engineer role or NOC/helpdesk that values CCNA.
+**Focus:** Career preparation: resumes, interviews, job search, and ongoing learning.
 
 | Week | Theme | Folder |
 | --- | --- | --- |

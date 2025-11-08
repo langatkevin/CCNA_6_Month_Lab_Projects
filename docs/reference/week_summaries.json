@@ -1,0 +1,365 @@
+{
+  "weeks": [
+    {
+      "number": 1,
+      "objectives": [
+        "Review core networking terms such as LAN, WAN, bandwidth, and latency.",
+        "Compare the OSI and TCP/IP models and trace encapsulation.",
+        "Install Packet Tracer and confirm a two-node topology can ping.",
+        "Create a repeatable note system for the entire program."
+      ],
+      "labs": [
+        "Lab 1.1 \u2013 Basic LAN ping test with two PCs and a switch.",
+        "Lab 1.2 \u2013 Console into a 2960 switch and practice show commands.",
+        "Mini project \u2013 Diagram the home network and label the OSI layers in use."
+      ],
+      "milestones": [
+        "One-page explanation of how data moves between hosts using the OSI view.",
+        "Packet Tracer screenshot plus a short summary of the ping test.",
+        "Packet Tracer and note workflow confirmed for continued use."
+      ]
+    },
+    {
+      "number": 2,
+      "objectives": [
+        "Study Ethernet framing, TCP vs UDP behavior, and ARP resolution.",
+        "Practice interface configuration and verification commands.",
+        "Capture traffic in Packet Tracer simulation mode to observe headers.",
+        "Complete short daily subnetting drills to build speed."
+      ],
+      "labs": [
+        "Lab 2.1 \u2013 Apply basic switch hardening (hostname, passwords, management IP).",
+        "Lab 2.2 \u2013 Build a three-switch topology with trunks and inspect MAC tables.",
+        "Trace exercise \u2013 Record an ARP request and reply using a packet capture."
+      ],
+      "milestones": [
+        "Three timed subnetting drills finished with at least 90 percent accuracy.",
+        "Short write-up describing the trunk test and MAC table observations.",
+        "Packet capture annotated with the key header fields."
+      ]
+    },
+    {
+      "number": 3,
+      "objectives": [
+        "Design IPv4 addressing plans with VLSM for small offices.",
+        "Configure IPv6 global, link-local, and loopback addresses.",
+        "Practice host configuration (PCs, switches, routers) for dual stack.",
+        "Keep flashcards for prefix lengths, masks, and host calculations."
+      ],
+      "labs": [
+        "Lab 3.1 \u2013 Subnet a /24 into multiple VLANs and document the plan.",
+        "Lab 3.2 \u2013 Configure IPv6 on two routers and verify pings plus ND output.",
+        "Worksheet drill \u2013 Complete a set of random subnetting problems."
+      ],
+      "milestones": [
+        "Addressing spreadsheet finished and peer-reviewed or self-checked.",
+        "Dual-stack ping test captured with command outputs.",
+        "Subnetting accuracy log maintained for the week."
+      ]
+    },
+    {
+      "number": 4,
+      "objectives": [
+        "Refresh wireless basics such as channels, security, and coverage.",
+        "Review visualization tools (mind maps, diagrams, flashcards).",
+        "Summarize lessons learned from Months 1\u20134 fundamentals content.",
+        "Take a small practice exam that mixes questions from weeks 1\u20134."
+      ],
+      "labs": [
+        "Lab 4.1 \u2013 Build a small WLAN in Packet Tracer and test association.",
+        "Lab 4.2 \u2013 Capture IPv6 Neighbor Discovery traffic for review.",
+        "Practice exam \u2013 Complete a 50-question fundamentals quiz."
+      ],
+      "milestones": [
+        "Wireless lab write-up that lists SSID, security choice, and results.",
+        "Mind map or visual summary covering all fundamentals topics so far.",
+        "Practice exam score recorded with weak topics flagged."
+      ]
+    },
+    {
+      "number": 5,
+      "objectives": [
+        "Configure VLANs, access ports, and voice ports on multiple switches.",
+        "Practice router-on-a-stick inter-VLAN routing.",
+        "Verify connectivity with show commands and per-VLAN pings.",
+        "Document standard naming and IP rules for campus access layers."
+      ],
+      "labs": [
+        "Lab 5.1 \u2013 Create VLANs and assign access/voice ports.",
+        "Lab 5.2 \u2013 Configure inter-VLAN routing using subinterfaces.",
+        "Validation checklist \u2013 Record ping tests and interface summaries."
+      ],
+      "milestones": [
+        "Access layer template documented for future labs.",
+        "Inter-VLAN routing test evidence stored with commands and pings.",
+        "Post-lab summary listing troubleshooting steps taken."
+      ]
+    },
+    {
+      "number": 6,
+      "objectives": [
+        "Review STP concepts (root bridge, port states, PortFast, BPDU Guard).",
+        "Build EtherChannel links with LACP and confirm load-balancing.",
+        "Map redundant switch topologies and expected forwarding paths.",
+        "Record show command outputs for STP and EtherChannel verification."
+      ],
+      "labs": [
+        "Lab 6.1 \u2013 Configure Rapid PVST+ with a selected root bridge.",
+        "Lab 6.2 \u2013 Build a two-switch EtherChannel and test failover.",
+        "Observation log \u2013 Capture how STP reacts when links fail."
+      ],
+      "milestones": [
+        "STP design notes with bridge priorities and interface roles.",
+        "EtherChannel testing report showing port-channel status.",
+        "Short quiz or flashcards covering key STP timers and behaviors."
+      ]
+    },
+    {
+      "number": 7,
+      "objectives": [
+        "Configure IPv4 and IPv6 static routes, including floating routes.",
+        "Implement HSRP or VRRP for gateway redundancy.",
+        "Practice troubleshooting for asymmetric routing and missing routes.",
+        "Log verification commands such as show ip route and show standby."
+      ],
+      "labs": [
+        "Lab 7.1 \u2013 Build a dual-router edge with static routes and backups.",
+        "Lab 7.2 \u2013 Configure HSRP on two switches and test failover.",
+        "Troubleshooting drill \u2013 Break a static route and document the fix."
+      ],
+      "milestones": [
+        "Routing table snapshots stored for normal and failure states.",
+        "HSRP state-change timeline recorded with ping evidence.",
+        "Troubleshooting checklist refined for future routing labs."
+      ]
+    },
+    {
+      "number": 8,
+      "objectives": [
+        "Review OSPF concepts: LSAs, DR/BDR, metrics, and areas.",
+        "Configure single-area OSPF on routers and switches with routed ports.",
+        "Verify adjacency states and SPF results with show commands.",
+        "Experiment with interface cost changes to influence path selection."
+      ],
+      "labs": [
+        "Lab 8.1 \u2013 Build a three-router single-area OSPF topology.",
+        "Lab 8.2 \u2013 Adjust interface costs and observe route changes.",
+        "Packet capture \u2013 Inspect Hello packets to confirm neighbor settings."
+      ],
+      "milestones": [
+        "Adjacency table recorded for every router in the lab.",
+        "Cost-change experiment documented with before/after routing tables.",
+        "Reflection paragraph summarizing OSPF lessons learned."
+      ]
+    },
+    {
+      "number": 9,
+      "objectives": [
+        "Configure DHCP pools, reservations, and relay agents.",
+        "Practice PAT and static NAT for inside networks.",
+        "Review supporting services such as DNS, NTP, and Syslog.",
+        "Collect command outputs that prove each service is operating."
+      ],
+      "labs": [
+        "Lab 9.1 \u2013 Build a DHCP server and relay setup in Packet Tracer.",
+        "Lab 9.2 \u2013 Configure PAT plus one static NAT rule and test translations.",
+        "Service log \u2013 Enable Syslog or NTP and capture relevant output."
+      ],
+      "milestones": [
+        "Address assignment table captured from the DHCP lab.",
+        "NAT translation table annotated with each test case.",
+        "Service verification commands stored for study notes."
+      ]
+    },
+    {
+      "number": 10,
+      "objectives": [
+        "Harden device access (secure console, VTY, and enable secrets).",
+        "Apply AAA concepts such as local users and role separation.",
+        "Practice Layer 2 security features: port security, DHCP snooping, DAI.",
+        "Draft a baseline security checklist for lab gear."
+      ],
+      "labs": [
+        "Lab 10.1 \u2013 Secure console/VTY access and enable SSH-only management.",
+        "Lab 10.2 \u2013 Configure port security and DHCP snooping on access switches.",
+        "Checklist \u2013 Document every security control applied in the lab."
+      ],
+      "milestones": [
+        "Security baseline template completed for future use.",
+        "Lab evidence showing blocked violations or snooping activity.",
+        "Reflection on remaining security gaps to tackle next."
+      ]
+    },
+    {
+      "number": 11,
+      "objectives": [
+        "Review automation basics: REST concepts, JSON, and YANG at a high level.",
+        "Use Python or another tool to send simple CLI batches to devices.",
+        "Experiment with Packet Tracer APIs or textFSM-style parsing.",
+        "Track repetitive tasks that could be automated later."
+      ],
+      "labs": [
+        "Lab 11.1 \u2013 Write a small script that logs into a device and runs show commands.",
+        "Lab 11.2 \u2013 Parse command output and save structured data to a file.",
+        "Planning task \u2013 List top manual workflows that automation could improve."
+      ],
+      "milestones": [
+        "Repository or folder created for automation snippets.",
+        "Sample script committed with comments on prerequisites.",
+        "Backlog of automation ideas prioritized by impact."
+      ]
+    },
+    {
+      "number": 12,
+      "objectives": [
+        "Review every CCNA domain with mixed quizzes and flashcards.",
+        "Run at least one full-length mock exam under timed conditions.",
+        "Capture weak-domain topics for targeted study in Month 5.",
+        "Plan rest days to avoid burnout before the capstone month."
+      ],
+      "labs": [
+        "Mock Exam 12.1 \u2013 Full CCNA-style test with score analysis.",
+        "Lab 12.2 \u2013 Rebuild a mini network that touches routing, switching, and services.",
+        "Retrospective \u2013 Document study habits that worked best."
+      ],
+      "milestones": [
+        "Mock exam report filed with focus areas for improvement.",
+        "Consolidated weak-topic list posted in the repo.",
+        "Updated study calendar for Month 5 deliverables."
+      ]
+    },
+    {
+      "number": 13,
+      "objectives": [
+        "Select a realistic network scenario for the capstone project.",
+        "Gather business, capacity, and security requirements.",
+        "Design high-level and low-level diagrams.",
+        "Create a bill of materials plus an addressing and VLAN plan."
+      ],
+      "labs": [
+        "Design Task 13.1 \u2013 Draft physical and logical diagrams.",
+        "Design Task 13.2 \u2013 Build an addressing spreadsheet and VLAN list.",
+        "Risk review \u2013 List constraints, open questions, and test plans."
+      ],
+      "milestones": [
+        "Capstone charter approved with scope, success criteria, and timeline.",
+        "Design packet (diagrams, IP plan, requirements) stored under the week folder.",
+        "Test checklist created for the implementation week."
+      ]
+    },
+    {
+      "number": 14,
+      "objectives": [
+        "Implement the capstone network in Packet Tracer or lab gear.",
+        "Validate routing, switching, services, and security controls.",
+        "Document test results with screenshots and command logs.",
+        "Track issues, fixes, and any design changes."
+      ],
+      "labs": [
+        "Build Task 14.1 \u2013 Deploy the full capstone topology.",
+        "Build Task 14.2 \u2013 Execute the predefined test plan and capture evidence.",
+        "Change log \u2013 Record adjustments made during implementation."
+      ],
+      "milestones": [
+        "Test report attached with pass/fail notes and remediation steps.",
+        "Updated diagrams reflecting the final build.",
+        "Lessons-learned summary for future projects."
+      ]
+    },
+    {
+      "number": 15,
+      "objectives": [
+        "Schedule the CCNA exam or final practice tests.",
+        "Run targeted drills for historically weak topics.",
+        "Prepare exam-day checklist (ID, Pearson VUE steps, rest plan).",
+        "Plan a short recovery window after the attempt."
+      ],
+      "labs": [
+        "Mock Exam 15.1 \u2013 Final timed practice with score review.",
+        "Drill 15.2 \u2013 Flashcard or lab remix focused on weak areas.",
+        "Mindset task \u2013 Write a calm exam-day routine."
+      ],
+      "milestones": [
+        "Exam booking confirmation saved in the repo or notes.",
+        "Improved mock exam score relative to Week 12.",
+        "Exam checklist finalized."
+      ]
+    },
+    {
+      "number": 16,
+      "objectives": [
+        "Refresh the resume with CCNA-focused bullet points.",
+        "Update LinkedIn, GitHub, and any portfolio pages.",
+        "Collect references or testimonials from mentors.",
+        "Write a concise professional summary."
+      ],
+      "labs": [
+        "Profile Task 16.1 \u2013 Rewrite resume bullet points to quantify impact.",
+        "Profile Task 16.2 \u2013 Align GitHub README and pinned repos with networking goals.",
+        "Outreach list \u2013 Build a spreadsheet of target companies or contacts."
+      ],
+      "milestones": [
+        "Resume vNext stored in PDF and DOCX formats.",
+        "Online profiles audited with before/after screenshots.",
+        "Reference list confirmed with contact info."
+      ]
+    },
+    {
+      "number": 17,
+      "objectives": [
+        "Collect common behavioral and technical interview questions.",
+        "Draft concise STAR-format answers for experience stories.",
+        "Re-create troubleshooting labs that mirror typical interview prompts.",
+        "Schedule mock interviews or study sessions."
+      ],
+      "labs": [
+        "Interview Lab 17.1 \u2013 Simulate a helpdesk-to-network escalation scenario.",
+        "Interview Lab 17.2 \u2013 Practice rapid switch/router configuration from memory.",
+        "Question bank \u2013 Maintain a list of questions with practiced answers."
+      ],
+      "milestones": [
+        "Mock interview feedback documented with action items.",
+        "Question bank reviewed and refined twice this week.",
+        "Troubleshooting lab notes exported for quick refreshers."
+      ]
+    },
+    {
+      "number": 18,
+      "objectives": [
+        "Identify job leads that fit the desired role and location.",
+        "Customize cover letters or intro emails for each lead.",
+        "Track application status in a simple Kanban or spreadsheet.",
+        "Stay active in networking communities or forums."
+      ],
+      "labs": [
+        "Pipeline Task 18.1 \u2013 Build an application tracker with stages.",
+        "Pipeline Task 18.2 \u2013 Draft a reusable cover-letter template.",
+        "Community Task \u2013 Post or share one helpful networking insight."
+      ],
+      "milestones": [
+        "Minimum of five tailored applications sent this week.",
+        "Tracker updated daily with responses or follow-ups.",
+        "Community engagement logged (forum, LinkedIn, meetups)."
+      ]
+    },
+    {
+      "number": 19,
+      "objectives": [
+        "Review interview feedback and adjust answers accordingly.",
+        "Keep lab practice fresh with small daily scenarios.",
+        "Outline a continuous-learning plan beyond CCNA (CCNP, cloud, automation).",
+        "Maintain wellbeing habits to stay sharp for interviews."
+      ],
+      "labs": [
+        "Lab 19.1 \u2013 Daily 30-minute troubleshooting sprint using older labs.",
+        "Lab 19.2 \u2013 Draft a 90-day learning roadmap for the next certification or skill.",
+        "Reflection journal \u2013 Capture lessons from each interview round."
+      ],
+      "milestones": [
+        "Learning roadmap published in the repo.",
+        "Interview adjustments documented after every conversation.",
+        "Wellbeing checklist (sleep, breaks, exercise) reviewed each weekend."
+      ]
+    }
+  ]
+}

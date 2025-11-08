@@ -1,4 +1,4 @@
-import json
+﻿import json
 import re
 import unicodedata
 from pathlib import Path
@@ -14,6 +14,15 @@ REPLACEMENTS = {
     '”': '"',
     '–': '-',
     '—': '-'
+}
+
+MONTH_FOCUS_OVERRIDES = {
+    1: 'Lay the foundation: networking terms, models, addressing, and lab tooling.',
+    2: 'Switching focus: VLANs, trunks, spanning tree, and wireless access.',
+    3: 'Routing and IP services: static routes, OSPF, DHCP, NAT, and supporting services.',
+    4: 'Security plus review: harden devices, explore automation, and run mock exams.',
+    5: 'Capstone execution and final CCNA preparation.',
+    6: 'Career preparation: resumes, interviews, and job search momentum.'
 }
 
 
@@ -37,14 +46,15 @@ def main():
     lines = [
         '# CCNA 6-Month Lab Roadmap',
         '',
-        'This summary mirrors the reference study plan and points to the working folders under labs/.'
+        'Quick reference for every month in the study plan with direct links into `labs/`.'
     ]
 
     for month in plan:
         month_slug = f"month-{month['number']:02d}-{slugify(month['title'])}"
         lines.append('')
         lines.append(f"## Month {month['number']:02d} - {to_ascii(month['title'])}")
-        focus = to_ascii(month.get('focus', '')).strip()
+        focus_raw = MONTH_FOCUS_OVERRIDES.get(month['number'], month.get('focus', ''))
+        focus = to_ascii(focus_raw).strip()
         if focus:
             lines.append(f"**Focus:** {focus}")
         lines.append('')
